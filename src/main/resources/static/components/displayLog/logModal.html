@@ -1,0 +1,10 @@
+<div class="modal-header">
+    <strong>Log: {{vm.logType}}</strong>
+    <a type="button" class="close" aria-hidden="true" ng-click="vm.close('cancel')">&times;</a>
+</div>
+<div class="modal-body modal-full-height modal-full-width">
+    <div ng-repeat="logObj in vm.logData">
+        <ng-bind-html ng-bind-html="logObj.html_line"></ng-bind-html>
+        <br>
+    </div>
+</div>

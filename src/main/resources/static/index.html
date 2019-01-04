@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!--
+        app related stylesheet
+    -->
+    <link rel="stylesheet" href="/style/app.css">
+    <!--
+        third party stylesheets
+    -->
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap-theme/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
+
+    <link>
+    <title>Loggy (An Eye)</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+
+<body ng-app="app">
+<div ng-controller="homeController as vm">
+    <div id="splash-page" ng-show="!vm.showSplash" class="dissolve-animation">
+        <div class="page-splash">
+            <div class="page-splash-message">
+                <i class="fa fa-spinner fa-spin"></i> LOGGY
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="mainNavbar" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div ng-class="container-fluid">
+        <div class="navbar-brand">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <i class="fa fa-asterisk"></i>LOGGY</div>
+    </div>
+</div>
+<br>
+<!--<div id="loaderDiv" loader>-->
+    <!--<img src="img/loading.gif" class="ajax-loader"/>-->
+<!--</div>-->
+
+<div class="container">
+    <ng-view  class="shuffle-animation"></ng-view>
+    <div ng-controoler="homeController as vm" ng-if="vm.showSplash" swiss-overlay
+         swiss-overlay-delay-in="300"
+         swiss-overlay-delay-out="700"
+         swiss-overlay-animation="dissolve-animation">
+        <i class="fa fa-spinner fa-spin fa-5x" style="color: #0071c5"></i>
+        <div class="page-spinner-message overlay-message">{{vm.busyMessage}}</div>
+    </div>
+</div>
+
+<!--
+    third party js
+-->
+<script src="/bower_components/angular/angular.min.js"></script>
+<script src="/bower_components/angular-route/angular-route.js"></script>
+<script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+<script src="/bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="/bower_components/underscore/underscore.js"></script>
+<script src="/bower_components/highcharts/highcharts.js"></script>
+<script src="/bower_components/highcharts/modules/exporting.js"></script>
+<script src="/bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+
+
+
+<script src="app.js"></script>
+
+
+<!--
+ Services
+-->
+<script src="/components/service/services.module.js"></script>
+<script src="/components/service/api.service.js"></script>
+
+<!--
+-- Core Module
+-->
+<script src="/components/core/core.module.js"></script>
+<script src="/components/core/core.route.js"></script>
+<script src="/components/core/interceptor.service.js"></script>
+<script src="/components/core/overlay.directive.js"></script>
+
+
+<!--
+-- Home Module
+-->
+<script src="/components/home/home.module.js"></script>
+<script src="/components/home/home.route.js"></script>
+<script src="/components/home/home.controller.js"></script>
+
+
+<!--
+-- Detail Module
+-->
+<script src="/components/detail/detail.module.js"></script>
+<script src="/components/detail/detail.route.js"></script>
+<script src="/components/detail/detail.controller.js"></script>
+<!--
+-- Log Module
+-->
+<script src="/components/displayLog/displayLog.module.js"></script>
+<script src="/components/displayLog/displayLogCtrl.js"></script>
+</body>
+</html>

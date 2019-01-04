@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    consul:
+      host: consul.host.com
+      port: 8500
+      enabled: true
+      discovery:
+        healthCheckPath: /my-health-check
+        healthCheckInterval: 20s
+        enabled: true
+    refresh:
+      enabled: false
+    config:
+      name: Configuration-Service
+      enabled: true
+      uri: configuration.server.host.com
+  application:
+    name: Loggy
+    config:
+      name: Configuration-Service
+      enabled: true
+      uri: configuration.server.host.com

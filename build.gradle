@@ -1,0 +1,86 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.0.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+		maven {
+			url "https://plugins.gradle.org/m2/"
+		}
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.springframework.boot:spring-boot-starter-parent:${springBootVersion}")
+		classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.4'
+
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: "com.github.johnrengelman.shadow"
+
+group = 'com.intel.swce.loggy'
+version = '2.0'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+jar {
+	manifest {
+		attributes 'Main-Class': 'com.intel.swce.loggy.LoggyApplication'
+	}
+}
+apply plugin: 'io.spring.dependency-management'
+
+ext {
+	springCloudVersion = 'Finchley.RELEASE'
+}
+
+
+dependencies {
+	compile('org.springframework.boot:spring-boot-starter-web')
+	compile('org.springframework.boot:spring-boot-starter-web-services')
+	compile('org.springframework.boot:spring-boot-starter-websocket')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.cloud:spring-cloud-starter-consul-config')
+	compile('org.springframework.cloud:spring-cloud-starter-consul-discovery')
+	compile('org.springframework.cloud:spring-cloud-config-server')
+	compile('org.springframework.cloud:spring-cloud-starter-config')
+
+
+
+	compile('org.webjars:webjars-locator:0.20')
+	/*compile('org.webjars:sockjs-client:1.0.2')
+	compile('org.webjars:stomp-websocket:2.3.3')*/
+	compile('org.webjars:bootstrap:4.0.0-2')
+	compile('org.webjars:jquery:3.3.1')
+
+	compile('javax.mail:mail:1.4.1')
+	compile('com.google.guava:guava:21.0')
+	compile('com.google.code.gson:gson:2.8.2')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('mysql:mysql-connector-java')
+
+	compile('org.springframework.boot:spring-boot-starter-data-elasticsearch:2.0.0.RELEASE')
+	compile ('org.elasticsearch.client:transport:5.5.3')
+	compile ('org.elasticsearch:elasticsearch:5.5.3')
+	compile group: 'org.elasticsearch.plugin', name: 'transport-netty4-client', version: '5.5.3'
+	compile 'com.squareup.okhttp:okhttp:2.5.0'
+	compile group: 'org.json', name: 'json', version: '20180130'
+
+
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+}
+
+
+dependencyManagement {
+	imports {
+		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+	}
+}

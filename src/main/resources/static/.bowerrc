@@ -1,0 +1,5 @@
+{
+  "directory": "bower_components",
+  "proxy": "http://proxy-chain.com:777/",
+  "https-proxy": "http://proxy-chain.com:666"
+}

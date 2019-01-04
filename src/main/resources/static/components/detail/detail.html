@@ -1,0 +1,42 @@
+
+<br>
+<br>
+<br>
+<div class="row">
+    <div class="col-xs-2">
+        <button ng-click="vm.backToMain()" id="back-to-flow-list"
+                class="btn btn-default btn-sm">
+            <i class="glyphicon glyphicon-arrow-left"></i>
+            Back to Main Page
+        </button>
+    </div>
+    <div class="col-xs-8">
+<h4>
+        <span class="label label-primary">
+            {{::vm.header}}&nbsp;
+        </span>
+    <swiss-help help-txt="{{vm.description}}"
+                data-target="webuiPopover1"
+                style="cursor: help">
+    </swiss-help>
+</h4>
+
+<table class="table table-hover table-condensed table-bordered">
+    <thead>
+    <tr class="active">
+        <th scope="col">TYPE</th>
+        <th scope="col">COUNT</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr ng-repeat="st in vm.stat">
+        <td class="wrap-table-text">{{ st.type }}</td>
+        <td><button ng-click="vm.openModal(st.type)" type="button" class="btn btn-link">{{st.count}}</button></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+    <div class="col-xs-2">
+    </div>
+</div>

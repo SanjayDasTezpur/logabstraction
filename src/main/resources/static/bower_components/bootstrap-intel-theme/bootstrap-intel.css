@@ -1,0 +1,75 @@
+
+/* Bootstrap badge color */
+
+.badge:hover {
+    color: #ffffff;
+    text-decoration: none;
+    cursor: pointer;
+}
+.badge-error {
+    background-color: #b94a48;
+}
+.badge-error:hover {
+    background-color: #953b39;
+}
+.badge-warning {
+    background-color: #f89406;
+}
+.badge-warning:hover {
+    background-color: #c67605;
+}
+.badge-success {
+    background-color: #468847;
+}
+.badge-success:hover {
+    background-color: #356635;
+}
+.badge-info {
+    background-color: #3a87ad;
+}
+.badge-info:hover {
+    background-color: #2d6987;
+}
+.badge-inverse {
+    background-color: #333333;
+}
+.badge-inverse:hover {
+    background-color: #1a1a1a;
+}
+
+/* Bootstrap badge color */
+
+/* Bootstrap override */
+
+.navbar-inverse {
+    background-color: #0071c5 !important;
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+    border-color: #0071c5 !important;
+}
+
+.navbar-inverse .navbar-nav > .open > a,
+.navbar-inverse .navbar-nav > .open > a:hover,
+.navbar-inverse .navbar-nav > .open > a:focus {
+    color: #ffffff;
+    background-color: #0071c5 !important;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    color: #fff89f;
+    background-color: transparent;
+}
+
+/* Bootstrap override */
+

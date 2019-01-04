@@ -1,0 +1,22 @@
+{
+  "name": "IAPPortal",
+  "authors": [
+    "SanjayDasTezpur <sanjaydas.32100@gmail.com>"
+  ],
+  "description": "To show product data",
+  "main": "index.html",
+  "keywords": [
+    "iap"
+  ],
+  "license": "MIT",
+  "homepage": "index.html",
+  "dependencies": {
+    "angular": "1.4.7",
+    "bootstrap": "3",
+    "angular-bootstrap": "~1.3.1",
+    "angular-route": "1.4.7",
+    "underscore": "^1.8.3",
+    "highcharts-ng": "0.0.11",
+    "highcharts": "5.0.14"
+  }
+}

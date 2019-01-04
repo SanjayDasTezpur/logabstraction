@@ -1,0 +1,15 @@
+$ModLoad imfile
+
+$InputFileName /tmp/sanjayda_electra/current/gaps.log
+$InputFileTag gaps
+$InputFileStateFile /tmp/loggy_state_file
+$InputFileSeverity info
+$InputFileFacility local3
+$InputRunFileMonitor
+$RepeatedMsgReduction off
+
+$template jsonLogTemplate,"{\"app\":\"%programname%\",\"host\":\"%HOSTNAME%\",\"message\":\"%rawmsg:::json%\"}\n"
+
+if $programname == 'gaps' then @@10.106.158.9:3389;jsonLogTemplate
+
+&~

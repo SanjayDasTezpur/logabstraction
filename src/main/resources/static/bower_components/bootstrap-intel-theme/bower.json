@@ -1,0 +1,29 @@
+{
+    "name": "bootstrap-intel-theme",
+    "version": "0.0.1",
+    "main": "bootstrap-intel.css",
+    "description": "Bootstrap Intel Theme",
+    "authors": [
+        "Roi Ezra <roi.ezra@intel.com>"
+    ],
+    "dependencies": {
+        "bootstrap": "~3.1.1"
+    },
+    "license": "SWISS",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests",
+        "bower.json",
+        "Gruntfile.js",
+        "package.json",
+        "README.md",
+        ".bowerrc",
+        ".gitignore",
+        ".jshintignore",
+        ".jshintrc"
+    ],
+    "homepage": "https://github.intel.com/SWISS/bootstrapIntelTheme"
+}

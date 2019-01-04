@@ -1,0 +1,30 @@
+<div ng-repeat="tableElement in vm.tables">
+    <h4>
+        <span class="label label-primary">
+            {{::tableElement.header}}&nbsp;
+        </span>
+        <swiss-help help-txt="{{tableElement.description?tableElement.description:'No description provided.'}}"
+                    data-target="webuiPopover1"
+                    style="cursor: help">
+        </swiss-help>
+    </h4>
+
+    <table class="table table-hover table-condensed table-bordered">
+        <thead>
+        <tr class="active">
+            <th ng-repeat="colName in tableElement.columnNames">
+                {{::colName | uppercase}}
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="rowElement in tableElement.rows">
+                <td ng-repeat="attr in tableElement.columnNames" class="wrap-table-text">
+                    <ng-bind-html ng-if="attr != 'Product Name' && attr != 'count'" ng-bind-html="rowElement[attr] ? rowElement[attr] : 'NA'"></ng-bind-html>
+                    <div ng-if="attr =='Product Name'" ng-include="'components/mainScreen/templates/agentName.html'"></div>
+                    <div ng-if="attr =='count'" ng-include="'components/mainScreen/templates/log.html'"></div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
